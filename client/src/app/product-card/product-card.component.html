@@ -1,0 +1,16 @@
+<a href='/product/{{product._id}}' class='productCard'>
+    <img src='/assets/images/products/{{product._id}}/1.jpg' alt='{{product.name}}' />
+    <div class='productInfo'>
+        <h3>{{product.name}}</h3>
+        <p>{{product.type}}</p>
+        <p class='productPrice'>
+            <span>{{product.price}} лв.</span>
+            <span>{{discountedPrice}} лв.</span>
+        </p>
+        <p>Арт. №: {{product._id}}</p>
+        <p>Налични размери: {{sizes}}</p>
+    </div>
+    <span class='productSale'>
+        -{{discount}}%
+    </span>
+</a>

@@ -1,0 +1,75 @@
+<header>
+    <div class='topInfo'>
+        <div class='topInfoContainer'>
+            <div class='topInfoLeft'>
+                <p>
+                    Оригинални маратонки и кецове
+                </p>
+                <a class='iconHolder' href='/opinions'>
+                    <img class='icon-top' src='/assets/icons/header-top_info/star-gray_empty.svg' alt='top info icon' />
+                    Мнения от клиенти
+                </a>
+            </div>
+
+            <div class='topInfoRight'>
+                <div class='iconHolder'>
+                    <img class='icon-top' src='/assets/icons/header-top_info/email-gray.svg' alt='top info icon' />
+                    contact@shopsector.com
+                </div>
+                <div class='iconHolder'>
+                    <img class='icon-top' src='/assets/icons/header-top_info/skype-gray.svg' alt='top info icon' />
+                    shopsector.com
+                </div>
+                <div class='iconHolder'>
+                    <img class='icon-top' src='/assets/icons/header-top_info/phone-gray.svg' alt='top info icon' />
+                    0895 12 16 16
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='bottomInfo'>
+        <div class='logoDiv'>
+            <img src='/assets/logo.svg' alt='logo' />
+            <div class='logoText'>
+                <p>Само</p>
+                <p>Оригинални</p>
+                <p>Стоки</p>
+            </div>
+        </div>
+
+        <form action='/action_page.php'>
+            <input type='text' id='search' name='search' placeholder='Търсене...' />
+            <img class='icon-bottom' src='/assets/icons/header-user/search-black.svg' alt='top info icon' />
+        </form> 
+
+        <div class='userIcons'>
+            <!-- <a href={logged ? '/profile' : '/login'} class='iconHolder'> -->
+            <a href="/login" class='iconHolder'>
+                <img class='icon-bottom' src='/assets/icons/header-user/user-black.svg' alt='top info icon' />
+                <!-- {logged ? 'ПРОФИЛ' : 'ВХОД'} -->
+                ВХОД
+            </a>
+            <a href='/favorites' class='iconHolder'>
+                <img class='icon-bottom' src='/assets/icons/header-user/star-black_empty.svg' alt='top info icon' />
+                ЛЮБИМИ
+            </a>
+            <a href='/cart' class='iconHolder'>
+                <img class='icon-bottom' src='/assets/icons/header-user/cart-black.svg' alt='top info icon' />
+                КОЛИЧКА
+            </a>
+            <a href='/cart' class='iconHolder'>
+                <!-- {cart ? cart.length : 0} бр. / {cart ? cart.reduce((a, b) => a += (b.price - b.price * (b.discount / 100)), 0 ).toFixed(2) : (0).toFixed(2)}лв. -->
+                0 бр. / 0.00лв.
+            </a>
+        </div>
+    </div>
+
+    <nav>
+        <a href='/' class='navLink'>НАЧАЛО</a>
+        <a href='/products/male' class='navLink'>МЪЖКИ</a>
+        <a href='/products/female' class='navLink'>ДАМСКИ</a>
+        <a href='/products/kid' class='navLink'>ДЕТСКИ</a>
+        <a href='/products/sale' class='navLink navLinkSale'>РАЗПРОДАЖБА</a>
+    </nav>
+</header>

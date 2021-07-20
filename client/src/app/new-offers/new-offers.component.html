@@ -1,0 +1,18 @@
+<div class='newOffersContainer'>
+    <h2>{{name}}</h2>
+    <div class='productContainer'>
+        <app-product-card *ngFor="let product of products" [product]='product' style="margin: 10px 0px;"></app-product-card>
+
+        <div class='productArrowContainer productArrowLeft'>
+            <div class='productArrow'>
+                <img src='/assets/icons/new-offers/arrow-black_left.svg' alt='arrow left' />
+            </div>
+        </div>
+
+        <div class='productArrowContainer productArrowRight'>
+            <div class='productArrow'>
+                <img src='/assets/icons/new-offers/arrow-black_right.svg' alt='arrow right' />
+            </div>
+        </div>
+    </div>
+</div>
