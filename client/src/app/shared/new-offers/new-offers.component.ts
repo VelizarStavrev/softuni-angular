@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RequestService } from '../request.service';
-import { IProduct } from '../interfaces/request';
+import { RequestService } from '../../request.service';
+import { IProduct } from '../../interfaces/request';
 
 @Component({
   selector: 'app-new-offers',
@@ -15,6 +15,6 @@ export class NewOffersComponent implements OnInit {
   constructor(public requestService: RequestService) { }
 
   ngOnInit(): void {
-    this.requestService.loadFourProducts(this.type).subscribe(products => this.products = products);
+    this.requestService.loadProductsByCount(this.type, 4).subscribe(products => this.products = products);
   }
 }

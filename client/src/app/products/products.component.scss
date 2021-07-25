@@ -1,0 +1,139 @@
+.productsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    /* Product delivery div */
+    .productsDeliveryContainer {
+        display: flex;
+        border-bottom: 1px solid lightgray;
+        width: 100%;
+        justify-content: center;
+        padding: 10px;
+        box-sizing: border-box;
+
+        .productsItem {
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            color: #6d6e71;
+
+            img {
+                width: 25px;
+                padding-right: 5px;
+                padding-left: 20px;
+            }
+        }
+    }
+
+    /* Sides */
+    .productsContainerSides {
+        display: flex;
+        padding: 30px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Left side */
+    .productsLeft {
+        padding-right: 30px;
+
+        h3 {
+            color: #6d6e71;
+        }
+
+        .productFiltersContainer {
+            width: 280px;
+            display: flex;
+            flex-wrap: wrap;
+    
+            .productFilter {
+                border: none;
+                background-color: transparent;
+                border: 1px solid lightgray;
+                border-radius: 2.5px;
+                padding: 10px 15px;
+                width: 100%;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                cursor: pointer;
+
+                &:hover {
+                    border: 1px solid #000;
+                }
+            }
+
+            .productFilterSize {
+                flex: 1 0 25%;
+            }
+
+            .productFilterBrand {
+                flex: 1 0 30%;
+            }
+        }
+    }
+
+    /* Right side */
+    .productsRight {
+        width: 100%;
+
+        select {
+            padding: 10px;
+            font-weight: bold;
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+
+        .productsHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+    }
+
+    .productsNavigation {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 20px;
+            border: 1px solid lightgray;
+            border-radius: 2.5px;
+            padding: 7.5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            width: 37px;
+            height: 37px;
+            border: none;
+            background-color: transparent;
+            border: 1px solid lightgray;
+            border-radius: 2.5px;
+            padding: 0 7.5px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        img:hover, button:hover {
+            border-color: #000;
+        }
+    }
+
+    .productCardsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+
+        .productCard {
+            flex: 0 0 15%;
+
+            img {
+                max-width: 300px;
+            }
+        }
+    }
+}

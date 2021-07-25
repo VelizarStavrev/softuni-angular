@@ -1,0 +1,107 @@
+<main>
+    <div class='productPageContainer'>
+        <app-header-info style="width: 100%"></app-header-info>
+
+        <div class='productPageContainerTop'>
+            <div class='productPageImageContainer'>
+                <img *ngIf='product._id' id='productPageImageContainerMainImg' src='/assets/images/products/{{product._id}}/{{mainImgNumber}}.jpg' alt='product visual' />
+                <div class='productImageNavContainer'>
+                    <img *ngIf='product._id' src='/assets/images/products/{{product._id}}/1.jpg' alt='product visual' (click)='changePictureToClicked($event)' />
+                    <img *ngIf='product._id' src='/assets/images/products/{{product._id}}/2.jpg' alt='product visual' (click)='changePictureToClicked($event)' />
+                    <img *ngIf='product._id' src='/assets/images/products/{{product._id}}/3.jpg' alt='product visual' (click)='changePictureToClicked($event)' />
+                    <img *ngIf='product._id' src='/assets/images/products/{{product._id}}/4.jpg' alt='product visual' (click)='changePictureToClicked($event)' />
+                    <img *ngIf='product._id' src='/assets/images/products/{{product._id}}/5.jpg' alt='product visual' (click)='changePictureToClicked($event)' />
+                    <img *ngIf='product._id' src='/assets/images/products/{{product._id}}/6.jpg' alt='product visual' (click)='changePictureToClicked($event)' />
+                </div>
+            </div>
+
+            <div class='productPageInfoContainer'>
+                <h3>{{product.name}}</h3>
+                <p>{{product.type}}</p>
+                <p>Арт. №: {{product._id}}</p>
+                <p>
+                    <img *ngFor='let star of stars' class='starReview' src='/assets/icons/product-icons/star-yellow_filled.svg' alt='star review' />
+                    {{product.rating}} от 5 / {{product.votes}} гласа
+                </p>
+                <p class='productPrice'>
+                    <span>{{price}} лв.</span>
+                    <span>{{discountedPrice}} лв.</span>
+                </p>
+                <p>Спестявате {{discount}} лв.</p>
+                <p>Налични цветове: {{product.color}}</p>
+
+                <select name="sortBy" id="sortBy">
+                    <option value="0">Избери размер</option>
+                    <option *ngFor='let size of product.sizes' value={{size}}>{{size}}</option>;
+                </select>
+
+                <button (click)='addToCart()'>ДОБАВИ В КОЛИЧКАТА</button>
+
+                <p>Поръчай сега и ще получиш в Чет. 01.04</p>
+
+                <div class='productPageDeliverySmallContainer'>
+                    <div class='productPageItem'>
+                        <img src='/assets/icons/product-icons/view-gray.svg' alt='products info icon' />
+                        Тест и преглед преди плащане
+                    </div>
+
+                    <div class='productPageItem'>
+                        <img src='/assets/icons/product-icons/check-gray.svg' alt='products info icon' />
+                        Всички стоки са налични
+                    </div>
+
+                    <div class='productPageItem'>
+                        <img src='/assets/icons/product-icons/delivery-gray.svg' alt='products info icon' />
+                        Безплатна доставка над 100лв.
+                    </div>
+
+                    <div class='productPageItem'>
+                        <img src='/assets/icons/product-icons/shoe-gray.svg' alt='products info icon' />
+                        Само оригинални стоки
+                    </div>
+
+                    <div class='productPageItem'>
+                        <img src='/assets/icons/product-icons/return-gray.svg' alt='products info icon' />
+                        30 дни безплатно връщане
+                    </div>
+
+                    <div class='productPageItem'>
+                        <img src='/assets/icons/product-icons/phone-gray.svg' alt='products info icon' />
+                        0895 12 16 16 
+                    </div>
+                </div>
+
+                <div class='productShareLinks'>
+                    Сподели:
+                    <a href='https://www.facebook.com/ShopSector/' target='_blank'><img src='/assets/icons/product-icons/facebook-black.svg' alt='products info icon' /></a>
+                    <a href='https://www.pinterest.com/shopsector/' target='_blank'><img src='/assets/icons/product-icons/pinterest-black.svg' alt='products info icon' /></a>
+                    <a href='https://plus.google.com/+Shopsector' target='_blank'><img src='/assets/icons/product-icons/google-black.svg' alt='products info icon' /></a>
+                </div>
+            </div>
+
+            <!-- <div class='productPageOrderContainer'>
+                QUICK ORDER FORM
+            </div> -->
+        </div>
+
+        <div class='productPageContainerBottom'>
+            <div class='productDesription'>
+                <h3>Информация за продукта</h3>
+                <p>{{product.description}}</p>
+                <p><b>ЦВЯТ:</b> {{product.color}}</p>
+                <p><b>СЪСТАВ:</b> {{product.material}}</p>
+            </div>
+            
+            <div class='productFAQ'>
+                <h3>Често задавани въпроси</h3>
+                <p>информация</p>
+
+                <h3>Доставка и плащане</h3>
+                <p>Ние, от ShopSector, се стремим към бързина и професионализъм при доставката на Вашите поръчки, затова ползваме услугите на куриерска фирма “Еконт Експрес”. Доставяме до всяка точка на България в рамките на 1-2 работни дни. Може да получите пратката си до точно посочен от Вас адрес (независимо дали домашен или служебен) или до офис на "Еконт Експрес" в съответното населено място. Този срок може да бъде удължен по време на по-натоварени кампанийни периоди, национални празници или лоши метеорологични условия.</p>
+
+                <h3>Контакти</h3>
+                <p>информация</p>
+            </div>
+        </div>
+    </div>
+</main>

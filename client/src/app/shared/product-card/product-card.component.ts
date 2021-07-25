@@ -7,16 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
   @Input() product:any = {}; // allows this child to use this from it's parent
-  discountedPrice:number = 0;
-  sizes:string = '';
+  price:number = 0;
   discount:number = 0;
+  discountedPrice:any = 0;
+  sizes:string = '';
 
   constructor() { }
 
   ngOnInit(): void {
-    this.discountedPrice = Number((this.product.price - (this.product.price * (this.product.discount / 100))).toFixed(2));
-    this.sizes = this.product.sizes.join(' / ');
+    this.price = this.product.price.toFixed(2);
     this.discount = this.product.discount.toFixed(0);
+    this.discountedPrice = (this.price - (this.price * (this.discount / 100))).toFixed(2);
+    this.sizes = this.product.sizes.join(' / ');
   }
 
 }

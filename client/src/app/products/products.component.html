@@ -1,0 +1,87 @@
+<main>
+    <div class='productsContainer'>
+        <app-header-info style="width: 100%"></app-header-info>
+
+        <div class='productsContainerSides'>
+            <div class='productsLeft'>
+                <h2>ФИЛТРИ</h2>
+
+                <h3>Размер:</h3>
+                <div class='productFiltersContainer'>
+                    <button class='productFilter productFilterSize' type='button'>20</button>
+                    <button class='productFilter productFilterSize'>25</button>
+                    <button class='productFilter productFilterSize'>35</button>
+                    <button class='productFilter productFilterSize'>45</button>
+                    <button class='productFilter productFilterSize'>55</button>
+                    <button class='productFilter productFilterSize'>100</button>
+                    <button class='productFilter productFilterSize'>100</button>
+                </div>
+
+                <h3>Марка:</h3>
+                <div class='productFiltersContainer'>
+                    <button class='productFilter productFilterBrand'>Puma</button>
+                    <button class='productFilter productFilterBrand'>Adidas</button>
+                    <button class='productFilter productFilterBrand'>Puma</button>
+                    <button class='productFilter productFilterBrand'>Puma</button>
+                    <button class='productFilter productFilterBrand'>Le Coq Sportif</button>
+                    <button class='productFilter productFilterBrand'>Test</button>
+                    <button class='productFilter productFilterBrand'>Test</button>
+                    <button class='productFilter productFilterBrand'>Test</button>
+                    <button class='productFilter productFilterBrand'>Test</button>
+                </div>
+
+                <h3>Цвят:</h3>
+                <div class='productFiltersContainer'>
+                    <button class='productFilter productFilterBrand'>Черен</button>
+                    <button class='productFilter productFilterBrand'>Бял</button>
+                    <button class='productFilter productFilterBrand'>Многоцветен</button>
+                    <button class='productFilter productFilterBrand'>Камуфлаж</button>
+                    <button class='productFilter productFilterBrand'>Син</button>
+                    <button class='productFilter productFilterBrand'>Сив</button>
+                </div>
+            </div>
+
+            <div class='productsRight'>
+                <div class='productsHeader'>
+                    <h2>НАЧАЛО / {{sectionName}} МАРАТОНКИ, КЕЦОВЕ И ДРУГИ</h2>
+                    <div>
+                        Подреди по:
+                        <select name="sortBy" id="sortBy">
+                            <option value="newest">Най-нови</option>
+                            <option value="priceHighest">Цена най-висока</option>
+                            <option value="priceLowest">Цена най-ниска</option>
+                            <option value="biggestDiscount">Най-намалени</option>
+                            <option value="default">По подразбиране</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class='productsHeader'>
+                    <div>
+                        На страница по:
+                        <select name="sortBy" id="sortBy" defaultValue="72">
+                            <option value="36">36</option>
+                            <option value="72">72</option>
+                            <option value="144">144</option>
+                        </select>
+                    </div>
+
+                    <div class='productsNavigation'>
+                        <img src='/assets/icons/products-icons/arrow-black_left.svg' alt='arrow left' />
+                        <button>1</button>
+                        <!-- {/* <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button> */} -->
+                        <img src='/assets/icons/products-icons/arrow-black_right.svg' alt='arrow right' />
+                    </div>
+                </div>
+
+                <div class='productCardsContainer'>
+                    <app-product-card *ngFor='let product of products' [product]='product' style='max-width: 300px; margin: 10px 0px;'></app-product-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

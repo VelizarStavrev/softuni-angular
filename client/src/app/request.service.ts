@@ -9,8 +9,14 @@ export class RequestService {
 
   constructor(private http: HttpClient) { }
 
-  loadFourProducts(type: string) {
-    const query = type ? type : 'male';
-    return this.http.get<IProduct[]>(`http://localhost:4000/getOneType/${query}/4`);
+  loadProductsByCount(type: string, count?: number) {
+    const queryType = type ? type : 'male';
+    const queryCount = count ? count : 0;
+    return this.http.get<IProduct[]>(`http://localhost:4000/getOneType/${queryType}/${queryCount}`);
+  }
+
+  loadProductById(id: number) {
+    const queryNumber = id ? id : 0;
+    return this.http.get<IProduct[]>(`http://localhost:4000/getOne/${queryNumber}`);
   }
 }

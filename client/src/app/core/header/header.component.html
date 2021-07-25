@@ -5,7 +5,7 @@
                 <p>
                     Оригинални маратонки и кецове
                 </p>
-                <a class='iconHolder' href='/opinions'>
+                <a class='iconHolder' routerLink='/opinions'>
                     <img class='icon-top' src='/assets/icons/header-top_info/star-gray_empty.svg' alt='top info icon' />
                     Мнения от клиенти
                 </a>
@@ -44,21 +44,21 @@
         </form> 
 
         <div class='userIcons'>
-            <!-- <a href={logged ? '/profile' : '/login'} class='iconHolder'> -->
-            <a href="/login" class='iconHolder'>
+            <!-- <a routerLink={logged ? '/profile' : '/login'} class='iconHolder'> -->
+            <a routerLink='/login' class='iconHolder'>
                 <img class='icon-bottom' src='/assets/icons/header-user/user-black.svg' alt='top info icon' />
                 <!-- {logged ? 'ПРОФИЛ' : 'ВХОД'} -->
                 ВХОД
             </a>
-            <a href='/favorites' class='iconHolder'>
+            <a routerLink='/favorites' class='iconHolder'>
                 <img class='icon-bottom' src='/assets/icons/header-user/star-black_empty.svg' alt='top info icon' />
                 ЛЮБИМИ
             </a>
-            <a href='/cart' class='iconHolder'>
+            <a routerLink='/cart' class='iconHolder'>
                 <img class='icon-bottom' src='/assets/icons/header-user/cart-black.svg' alt='top info icon' />
                 КОЛИЧКА
             </a>
-            <a href='/cart' class='iconHolder'>
+            <a routerLink='/cart' class='iconHolder'>
                 <!-- {cart ? cart.length : 0} бр. / {cart ? cart.reduce((a, b) => a += (b.price - b.price * (b.discount / 100)), 0 ).toFixed(2) : (0).toFixed(2)}лв. -->
                 0 бр. / 0.00лв.
             </a>
@@ -66,10 +66,10 @@
     </div>
 
     <nav>
-        <a href='/' class='navLink'>НАЧАЛО</a>
-        <a href='/products/male' class='navLink'>МЪЖКИ</a>
-        <a href='/products/female' class='navLink'>ДАМСКИ</a>
-        <a href='/products/kid' class='navLink'>ДЕТСКИ</a>
-        <a href='/products/sale' class='navLink navLinkSale'>РАЗПРОДАЖБА</a>
+        <a routerLink='/' class='navLink' routerLinkActive='navLinkActive' [routerLinkActiveOptions]='{ exact: true }'>НАЧАЛО</a>
+        <a routerLink='/products/male' class='navLink' routerLinkActive='navLinkActive'>МЪЖКИ</a>
+        <a routerLink='/products/female' class='navLink' routerLinkActive='navLinkActive'>ДАМСКИ</a>
+        <a routerLink='/products/kid' class='navLink' routerLinkActive='navLinkActive'>ДЕТСКИ</a>
+        <a routerLink='/products/sale' class='navLink navLinkSale' routerLinkActive='navLinkActive'>РАЗПРОДАЖБА</a>
     </nav>
 </header>

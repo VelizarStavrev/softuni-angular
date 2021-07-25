@@ -1,0 +1,22 @@
+/* Product delivery div */
+.headerInfoContainer {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+
+    .headerInfoItem {
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        color: #6d6e71;
+    }
+
+    img {
+        width: 25px;
+        padding-right: 5px;
+        padding-left: 20px;
+    }
+}
