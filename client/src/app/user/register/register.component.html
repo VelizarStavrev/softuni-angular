@@ -1,0 +1,116 @@
+<div class='profileRegisterContainer'>
+    <app-header-info style='width: 100%'></app-header-info>
+
+    <div class='profileRegisterForm'>
+        <h2>НОВА РЕГИСТРАЦИЯ</h2>
+        <div class='profileRegisterFormContainer'>
+            <form #form='ngForm' (ngSubmit)='register(form)' autocomplete='off'>
+                <div class='registerFormDiv'>
+                    <h3>Данни за вход</h3>
+                    <label>
+                        Имейл<br />
+                        <input
+                            type='email'
+                            name='email'
+                            placeholder='example@abv.bg'
+                            ngModel
+                            #emailInput='ngModel'
+                            email
+                            required
+                        />
+                    </label><br />
+
+                    <label>
+                        Потвърди имейл<br />
+                        <input
+                            type='email'
+                            name='reemail'
+                            placeholder='example@abv.bg'
+                            ngModel
+                            #reemailInput='ngModel'
+                            email
+                            required
+                        />
+                    </label><br />
+
+                    <label>
+                        Парола<br />
+                        <input
+                            type='password'
+                            name='password'
+                            ngModel
+                            #passwordInput='ngModel'
+                            [minlength]='6'
+                            required
+                        />
+                    </label><br />
+
+                    <label>
+                        Потвърди паролата<br />
+                        <input
+                            type='password'
+                            name='repassword'
+                            ngModel
+                            #repasswordInput='ngModel'
+                            [minlength]='6'
+                            required
+                        />
+                    </label><br />
+                </div>
+
+                <div class='registerFormDiv'>
+                    <h3>Лична информация</h3>
+                    <label>
+                        Име и фамилия<br />
+                        <input
+                            type='text'
+                            name='name'
+                            placeholder='Име Фамилия'
+                            ngModel
+                            #nameInput='ngModel'
+                            required
+                        />
+                    </label><br />
+
+                    <label>
+                        Мобилен телефон<br />
+                        <input
+                            type='tel'
+                            name='phone'
+                            placeholder='0888899999'
+                            ngModel
+                            #phoneInput='ngModel'
+                            [minlength]='10'
+                            required
+                        />
+                    </label><br />
+
+                </div>
+
+                <button type='submit' class='profileRegisterFormContainerInputBtn'>РЕГИСТРАЦИЯ</button><br />
+                <a routerLink='/login'>Назад към входа</a>
+                
+                <ng-container *ngIf='emailInput.touched'>
+                    <p class='errorMessage' *ngIf='emailInput.errors?.required'>Попълнете имейл.</p>
+                    <p class='errorMessage' *ngIf='emailInput.errors?.email'>Неправилен имейл.</p>
+                </ng-container>
+
+                <ng-container *ngIf='passwordInput.touched'>
+                    <p class='errorMessage' *ngIf='passwordInput.errors?.required'>Попълнете парола.</p>
+                    <p class='errorMessage' *ngIf='passwordInput.errors?.minlength'>Твърде къса парола.</p>
+                </ng-container>
+
+                <ng-container *ngIf='nameInput.touched'>
+                    <p class='errorMessage' *ngIf='nameInput.errors?.required'>Попълнете имена.</p>
+                </ng-container>
+
+                <ng-container *ngIf='phoneInput.touched'>
+                    <p class='errorMessage' *ngIf='phoneInput.errors?.required'>Попълнете телефон.</p>
+                    <p class='errorMessage' *ngIf='phoneInput.errors?.minlength'>Невалиден телефон.</p>
+                </ng-container>
+
+                <p class='errorMessage'>{{errorMessage}}</p>
+            </form>
+        </div>
+    </div>
+</div>

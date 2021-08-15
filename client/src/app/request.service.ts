@@ -19,4 +19,12 @@ export class RequestService {
     const queryNumber = id ? id : 0;
     return this.http.get<IProduct[]>(`http://localhost:4000/getOne/${queryNumber}`);
   }
+
+  loadOrdersByUserId(id: number) {
+    return this.http.get(`http://localhost:4000/getOrders/${id}`);
+  }
+
+  makeOrder(data: any) {
+    return this.http.post(`http://localhost:4000/createOrder`, data);
+  }
 }

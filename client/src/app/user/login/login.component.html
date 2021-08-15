@@ -1,0 +1,75 @@
+<div class='profileContainer'>
+    <app-header-info style='width: 100%'></app-header-info>
+
+    <div class='profileLoginForm'>
+        <h2>Вход или регистрация</h2>
+        <div class='profileLoginContainer'>
+            <div class='profileLoginSide'>
+                <h3>Регистрирани клиенти</h3>
+                
+                <form #form='ngForm' (ngSubmit)='login(form)' autocomplete='off'>
+                    <label for='email'>
+                        Имейл<br />
+                        <input
+                            type='email'
+                            name='email'
+                            ngModel
+                            #emailInput='ngModel'
+                            required
+                            email
+                        />
+                    </label><br />
+                    
+                    <label for='password'>
+                        Парола<br />
+                        <input
+                            type='password'
+                            name='password'
+                            ngModel
+                            #passwordInput='ngModel'
+                            [minlength]='6'
+                            required
+                        />
+                    </label><br />
+
+                    <button type='submit' class='profileLoginSideInputBtn'>ВХОД</button><br />
+                    <a routerLink='/url'>Забравена парола</a>
+                </form>
+
+                <ng-container *ngIf='emailInput.touched'>
+                    <p class='errorMessage' *ngIf='emailInput.errors?.required'>Попълнете имейл.</p>
+                    <p class='errorMessage' *ngIf='emailInput.errors?.email'>Неправилен имейл.</p>
+                </ng-container>
+
+                <ng-container *ngIf='passwordInput.touched'>
+                    <p class='errorMessage' *ngIf='passwordInput.errors?.required'>Попълнете парола.</p>
+                    <p class='errorMessage' *ngIf='passwordInput.errors?.minlength'>Твърде къса парола.</p>
+                </ng-container>
+
+                <p class='errorMessage'>{{loginMessage}}</p>
+            </div>
+
+            <div class='profileRegisterSide'>
+                <h3>Нови клиенти</h3>
+                <p>Защо да се регистрирам?</p>
+                <div class='profileRegisterItem'>
+                    <img src='/assets/icons/login-icons/check-green.svg' alt='profile check icon' />
+                    Научавате първи за новите модели и разпродажби
+                </div>
+                <div class='profileRegisterItem'>
+                    <img src='/assets/icons/login-icons/check-green.svg' alt='profile check icon' />
+                    Бързо и лесно пазаруване
+                </div>
+                <div class='profileRegisterItem'>
+                    <img src='/assets/icons/login-icons/check-green.svg' alt='profile check icon' />
+                    История на поръчките
+                </div>
+                <div class='profileRegisterItem'>
+                    <img src='/assets/icons/login-icons/check-green.svg' alt='profile check icon' />
+                    Участвате в нашата програма Лоялен клиент
+                </div>
+                <a routerLink='/register'>РЕГИСТРАЦИЯ</a>
+            </div>
+        </div>
+    </div>
+</div>

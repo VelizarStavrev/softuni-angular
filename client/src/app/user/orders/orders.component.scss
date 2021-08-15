@@ -1,0 +1,47 @@
+.profileInfoContainer {
+    margin: 20px auto;
+    border: 1px solid lightgray;
+    padding: 20px;
+    width: auto;
+    max-width: 600px;
+
+    form {
+        label {
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        a {
+            color: #6d6e71;
+            margin-top: 5px;
+            display: inline-block;
+        }
+    }
+
+    img {
+        width: 75px;
+    }
+
+    .profileLinkDiv {
+        display: flex;
+        justify-content: center;
+        
+        a {
+            text-decoration: none;
+            width: 150px;
+            display: inline-block;
+            text-align: center;
+            color: #000;
+            font-weight: bold;
+            padding-bottom: 10px;
+        
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    
+        .profileActiveLink {
+            text-decoration: underline !important;
+        }
+    }
+}

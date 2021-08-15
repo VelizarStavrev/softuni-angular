@@ -1,0 +1,116 @@
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    .profileLoginForm {
+        margin: 40px;
+        border: 1px solid lightgray;
+        border-radius: 2.5px;
+    
+        h2 {
+            text-transform: uppercase;
+            border-bottom: 1px solid lightgray;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+    
+        .profileLoginContainer {
+            display: flex;
+            padding: 20px;
+        
+            h3 {
+                text-align: center;
+                margin-top: 0;
+            }
+            
+            /* Login */
+            .profileLoginSide {
+                margin-right: 40px;
+        
+                form {
+                    margin-bottom: 15px;
+        
+                    label {
+                        margin-bottom: 15px;
+                        display: inline-block;
+                        width: 100%;
+        
+                        input {
+                            width: 100%;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+        
+                .profileLoginSideInputBtn {
+                    border: none;
+                    background-color: #000;
+                    color: #fff;
+                    padding: 10px;
+                    font-weight: bold;
+                    width: 100px;
+                    border-radius: 2.5px;
+                    cursor: pointer;
+                }
+                
+                a {
+                    display: inline-block;
+                    margin-top: 5px;
+                    color: #6d6e71;
+                
+                    &:hover {
+                        color: #000;
+                    }
+                }
+
+                .errorMessage {
+                    display: block;
+                    color: red;
+                    margin-bottom: 0;
+                }
+
+                .errorMessageHidden {
+                    display: none;
+                }
+            }
+        
+            /* Register */
+            .profileRegisterSide {
+                display: flex;
+                flex-direction: column;
+        
+                p {
+                    text-align: center;
+                    font-weight: bold;
+                    color: #6d6e71;
+                }
+        
+                a {
+                    display: inline-block;
+                    text-decoration: none;
+                    padding: 10px;
+                    background-color: #000;
+                    color: #fff;
+                    font-weight: bold;
+                    box-sizing: content-box;
+                    width: 100px;
+                    align-self: center;
+                    border-radius: 2.5px;
+                }
+        
+                .profileRegisterItem {
+                    display: flex;
+                    margin-bottom: 10px;
+        
+                    img {
+                        width: 20px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

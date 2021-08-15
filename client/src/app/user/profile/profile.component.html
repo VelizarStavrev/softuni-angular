@@ -1,0 +1,80 @@
+<div class='profileContainer'>
+    <app-header-info style='width: 100%'></app-header-info>
+
+    <div class='profileInfoContainer'>
+        <div class='profileLinkDiv'>
+            <a routerLink='/profile' routerLinkActive='profileActiveLink'>ПРОФИЛ</a>
+            <a routerLink='/orders' routerLinkActive='profileActiveLink'>ПОРЪЧКИ</a>
+        </div>
+
+        <form #form='ngForm' (ngSubmit)='updateUser(form)' autocomplete='off'>
+            <label>
+                Имейл<br />
+                <input
+                    type='email'
+                    name='email'
+                    value={{email}}
+                    ngModel
+                    #emailInput='ngModel'
+                    required
+                    email
+                    disabled
+                />
+            </label><br />
+            
+            <label>
+                Име и фамилия<br />
+                <input
+                    type='text'
+                    name='name'
+                    value={{name}}
+                    ngModel
+                    #nameInput='ngModel'
+                    required
+                />
+            </label><br />
+            
+            <label>
+                Мобилен телефон<br />
+                <input
+                    type='tel'
+                    name='phone'
+                    value={{phone}}
+                    ngModel
+                    #phoneInput='ngModel'
+                    [minlength]='10'
+                    required
+                />
+            </label><br />
+            
+            <label>
+                Парола<br />
+                <input
+                    type='password'
+                    name='password'
+                    value=''
+                    ngModel
+                    #passwordInput='ngModel'
+                    [minlength]='6'
+                    required
+                />
+            </label><br />
+            
+            <label>
+                Потвърди паролата<br />
+                <input
+                    type='password'
+                    name='repassword'
+                    value=''
+                    ngModel
+                    #repasswordInput='ngModel'
+                    [minlength]='6'
+                    required
+                />
+            </label><br />
+            
+            <button class='profileLoginSideInputBtn' type='submit'>ЗАПАЗИ</button><br />
+            <a routerLink='/' (click)='logoutUser()'>Изход от профила</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class='cartContainer'>
+    <app-header-info style='width: 100%'></app-header-info>
+
+    <div class='cartInfoContainer'>
+        <h2>КОЛИЧКА</h2>
+        <div class='cartProductContainer' *ngFor='let product of cart'>
+            <a routerLink='/product/{{product.id}}'>
+            <img id='productPageImageContainerMainImg' src='/assets/images/products/{{product.id}}/1.jpg'
+                alt='product visual' />
+            №: {{product.id}} | Размер: {{product.size}} | Цена: {{product.discountedPrice}}лв.
+            </a>
+            <div class='cartRemoveItem' id={{product.id}} (click)='removeItem($event)'>x</div>
+        </div>
+
+        <p *ngIf='!cart'>Нямате добавени продукти в количката.</p>
+
+        <div>
+            <span>TOTAL: {{totalPrice}}лв.</span>
+            <button (click)='makeOrder()'>ПОРЪЧКА</button>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../request.service';
 import { IProduct } from '../interfaces/request';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators'
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product',
@@ -10,6 +10,7 @@ import { switchMap } from 'rxjs/operators'
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+  selectedOption: string = 'Избери размер';
   product: any = {};
   price: number = 0;
   discount: number = 0;
@@ -19,20 +20,20 @@ export class ProductComponent implements OnInit {
 
   addToCart() {
 
-    // TO DO - create a cart service
-    console.log('Add to cart clicked!');
+    let cartCheck = localStorage.getItem('cart-items');
+    let shoeSize = this.selectedOption;
 
-    // let cartCheck = JSON.parse(localStorage.getItem('cart-items'));
+    // if cart doesn't have items
+    if (cartCheck === null) {
+      localStorage.setItem('cart-items', JSON.stringify([{ id: this.product._id, size: shoeSize, price: this.product.price, discount: this.product.discount }]));
+      return;
+    }
 
-    // if (cartCheck == null) {
-    //   localStorage.setItem('cart-items', JSON.stringify([{ id: match.params.id, size, price: items.price, discount: items.discount }]));
-    //   setCart([{ id: match.params.id, size, price: items.price, discount: items.discount }]);
-    //   return;
-    // }
-
-    // cartCheck.push({ id: match.params.id, size, price: items.price, discount: items.discount });
-    // localStorage.setItem('cart-items', JSON.stringify(cartCheck));
-    // setCart(cartCheck);
+    // if cart has items
+    let convertOldCart = JSON.parse(cartCheck);
+    let newCart = convertOldCart;
+    newCart.push({ id: this.product._id, size: shoeSize, price: this.product.price, discount: this.product.discount });
+    localStorage.setItem('cart-items', JSON.stringify(newCart));
   }
 
   changePictureToClicked(e: any) {

@@ -1,0 +1,18 @@
+<div class='profileContainer'>
+    <app-header-info style='width: 100%'></app-header-info>
+
+    <div class='profileInfoContainer'>
+        <div class='profileLinkDiv'>
+            <a routerLink='/profile' routerLinkActive='profileActiveLink'>ПРОФИЛ</a>
+            <a routerLink='/orders' routerLinkActive='profileActiveLink'>ПОРЪЧКИ</a>
+        </div>
+
+        <p *ngIf='!orders'>Нямате направени поръчки</p>
+
+        <p *ngFor='let order of orders'>
+            №{{order._id}} - 
+            <a *ngFor='let product of order.products' routerLink='/product/{{product.id}}'><img id='productPageImageContainerMainImg' src='/assets/images/products/{{product.id}}/1.jpg' alt='product visual' /></a>
+             - Тотал: {{order.total}} лв.
+        </p>
+    </div>
+</div>
