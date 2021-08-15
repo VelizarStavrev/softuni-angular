@@ -11,8 +11,8 @@ export class HeaderComponent implements OnInit {
   profileText = this.userService.isLogged ? 'ПРОФИЛ' : 'ВХОД';
   cart: any = localStorage.getItem('cart-items');
   cartConvert = JSON.parse(this.cart);
-  cartCount = this.cartConvert.length;
-  cartTotal = this.calculateCartTotal();
+  cartCount = this.cartConvert ? this.cartConvert.length : 0;
+  cartTotal = this.cartConvert ? this.calculateCartTotal() : 0.00;
 
   calculateCartTotal() {
     let sumArray: any = [];
