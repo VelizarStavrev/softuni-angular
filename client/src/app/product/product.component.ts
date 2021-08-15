@@ -35,6 +35,7 @@ export class ProductComponent implements OnInit {
     // if cart doesn't have items
     if (cartCheck === null) {
       localStorage.setItem('cart-items', JSON.stringify([{ id: this.product._id, size: shoeSize, price: this.product.price, discount: this.product.discount }]));
+      this.successMessage = 'Добавено в количката!';
       return;
     }
 
