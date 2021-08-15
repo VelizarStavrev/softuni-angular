@@ -10,7 +10,9 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  selectedOption: string = 'Избери размер';
+  selectedOption: string = '0';
+  successMessage: string = '';
+  errorMessage: string = '';
   product: any = {};
   price: number = 0;
   discount: number = 0;
@@ -19,9 +21,16 @@ export class ProductComponent implements OnInit {
   mainImgNumber: number = 1;
 
   addToCart() {
+    this.errorMessage = '';
+    this.successMessage = '';
 
     let cartCheck = localStorage.getItem('cart-items');
     let shoeSize = this.selectedOption;
+
+    if (shoeSize == '0') {
+      this.errorMessage = 'Изберете размер!';
+      return;
+    }
 
     // if cart doesn't have items
     if (cartCheck === null) {
@@ -34,6 +43,9 @@ export class ProductComponent implements OnInit {
     let newCart = convertOldCart;
     newCart.push({ id: this.product._id, size: shoeSize, price: this.product.price, discount: this.product.discount });
     localStorage.setItem('cart-items', JSON.stringify(newCart));
+
+    // Show message to the user
+    this.successMessage = 'Добавено в количката!';
   }
 
   changePictureToClicked(e: any) {

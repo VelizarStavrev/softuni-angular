@@ -61,6 +61,14 @@
                 font-weight: bold;
                 cursor: pointer;
             }
+
+            .successMessage {
+                color: green;
+            }
+
+            .errorMessage {
+                color: red;
+            }
         }
 
         /* ORDER */
