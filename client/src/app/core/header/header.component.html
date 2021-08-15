@@ -44,11 +44,9 @@
         </form> 
 
         <div class='userIcons'>
-            <!-- <a routerLink={logged ? '/profile' : '/login'} class='iconHolder'> -->
-            <a routerLink='/login' class='iconHolder'>
+            <a routerLink='{{profileLink}}' class='iconHolder'>
                 <img class='icon-bottom' src='/assets/icons/header-user/user-black.svg' alt='top info icon' />
-                <!-- {logged ? 'ПРОФИЛ' : 'ВХОД'} -->
-                ВХОД
+                {{profileText}}
             </a>
             <a routerLink='/favorites' class='iconHolder'>
                 <img class='icon-bottom' src='/assets/icons/header-user/star-black_empty.svg' alt='top info icon' />
@@ -59,8 +57,7 @@
                 КОЛИЧКА
             </a>
             <a routerLink='/cart' class='iconHolder'>
-                <!-- {cart ? cart.length : 0} бр. / {cart ? cart.reduce((a, b) => a += (b.price - b.price * (b.discount / 100)), 0 ).toFixed(2) : (0).toFixed(2)}лв. -->
-                0 бр. / 0.00лв.
+                {{cartCount}} бр. / {{cartTotal}}лв.
             </a>
         </div>
     </div>

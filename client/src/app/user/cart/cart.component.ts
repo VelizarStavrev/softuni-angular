@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequestService } from 'src/app/request.service';
+import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +12,7 @@ export class CartComponent implements OnInit {
   cart: any;
   totalPrice: number = 0;
 
-  constructor(public requestService: RequestService, public router: Router) { }
+  constructor(public requestService: RequestService, public router: Router, private userService: UserService) { }
 
   removeItem($event: any) {
     let storedCart: any = localStorage.getItem('cart-items');
@@ -41,6 +42,13 @@ export class CartComponent implements OnInit {
   }
 
   makeOrder() {
+
+    if (!this.userService.isLogged) {
+      const redirectUrl = '/login';
+      this.router.navigate([redirectUrl]);
+      return;
+    }
+
     const userid = localStorage.getItem('user-id');
     const total = this.totalPrice;
     let storedCart: any = localStorage.getItem('cart-items');

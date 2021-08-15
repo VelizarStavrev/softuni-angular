@@ -9,11 +9,17 @@ import { IUserData } from '../interfaces/user-data';
 })
 export class UserService {
 
-  // user: IUser | null | undefined = undefined;
+  user: IUser | null | undefined = undefined;
 
-  // get isLogged(): boolean {
-  //   return !!this.user;
-  // }
+  get isLogged(): boolean {
+    let user = localStorage.getItem('user-id');
+
+    if (user) {
+      return true;
+    }
+
+    return false;
+  }
 
   constructor(private http: HttpClient) { }
 

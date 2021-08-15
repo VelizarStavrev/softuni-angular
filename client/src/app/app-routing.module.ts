@@ -8,6 +8,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { OrdersComponent } from './user/orders/orders.component';
 import { CartComponent } from './user/cart/cart.component';
+import { AuthActivate } from './core/guards/auth.activate';
 
 const routes: Routes = [
   {
@@ -25,10 +26,12 @@ const routes: Routes = [
   },
   {
     path: 'profile',
+    canActivate: [AuthActivate],
     component: ProfileComponent
   },
   {
     path: 'orders',
+    canActivate: [AuthActivate],
     component: OrdersComponent
   },
   {
